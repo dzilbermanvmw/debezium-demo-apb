@@ -51,7 +51,7 @@ objects:
     data:
       secret: "{{ rh_sso.kafka_bridge_secret | b64encode }}"
   - kind: Kafka
-    apiVersion: kafka.strimzi.io/v1beta1
+    apiVersion: kafka.strimzi.io/v1beta2
     metadata:
       name: db-events
       namespace: "{{ proj_nm_demo }}"
@@ -284,7 +284,7 @@ objects:
         topicRegex: ".*"
         groupRegex: ".*"
   - kind: KafkaConnect
-    apiVersion: kafka.strimzi.io/v1beta1
+    apiVersion: kafka.strimzi.io/v1beta2
     metadata:
       name: db-events
       namespace: "{{ proj_nm_demo }}"
@@ -448,7 +448,7 @@ objects:
             help: "Kafka Connect JMX metric rebalance information"
             type: GAUGE
   - kind: KafkaBridge
-    apiVersion: kafka.strimzi.io/v1alpha1
+    apiVersion: kafka.strimzi.io/v1beta2
     metadata:
       name: db-events
       namespace: "{{ proj_nm_demo }}"
@@ -492,7 +492,7 @@ objects:
               discovery.3scale.net/path: /
               discovery.3scale.net/description-path: /openapi
   - kind: KafkaConnector
-    apiVersion: kafka.strimzi.io/v1alpha1
+    apiVersion: kafka.strimzi.io/v1beta2
     metadata:
       name: db-events
       namespace: "{{ proj_nm_demo }}"
